@@ -1,0 +1,5 @@
+# Only track configs + installer; never the oh-my-zsh clone or caches.
+.oh-my-zsh/
+*.bak.*
+*.zwc
+.zcompdump*
