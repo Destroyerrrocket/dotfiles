@@ -117,8 +117,10 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:/tools/Xilinx/Vivado/2022.1/bin/:/tools/Xilinx/Vitis_HLS/2022.1/bin/:/home/pmarcet/.cargo/bin"
 export XILINXD_LICENSE_FILE="1974@dc6-lic-10:1974@dc7-lic-04"
 export LM_LICENSE_FILE="1974@dc6-lic-10:1974@dc7-lic-04"
-eval $(ssh-agent) > /dev/null
-ssh-add ~/.ssh/id_ed25519 2> /dev/null
+[ -z "$SSH_AUTH_SOCK" ] && { eval "$(ssh-agent -s)" >/dev/null; ssh-add ~/.ssh/id_ed25519 2>/dev/null; }
+
+#eval $(ssh-agent) > /dev/null
+#ssh-add ~/.ssh/id_ed25519 2> /dev/null
 
 [[ ! -f "$HOME/.local/bin/env" ]] || . "$HOME/.local/bin/env"
 
