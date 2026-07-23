@@ -124,3 +124,4 @@ export LM_LICENSE_FILE="1974@dc6-lic-10:1974@dc7-lic-04"
 
 [[ ! -f "$HOME/.local/bin/env" ]] || . "$HOME/.local/bin/env"
 
+[[ ! -f ~/.zshenv ]] || source ~/.zshenv
